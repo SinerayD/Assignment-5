@@ -28,10 +28,9 @@ namespace ConsoleApp7.Models
                 {
                     Console.WriteLine("Please enter min 3, max 30 character");
                 }
-                
-
-                
+   
             }
+
         }
         public string Surname
         {
@@ -46,6 +45,11 @@ namespace ConsoleApp7.Models
                 else
                 {
                     Console.WriteLine("Please enter min 3, max 30 character");
+                }
+                while (value!=_surname)
+                {
+                    Console.WriteLine("Please enter min 3, max 30 character");
+                    value = _surname;   
                 }
             }
         }
@@ -69,7 +73,7 @@ namespace ConsoleApp7.Models
 
         public override string ToString()
         {
-            return $"Name : {Name} , Surname : {Surname} , GroupNO : {GroupNo},Id: {Id}";
+            return $"Name : {Name} , Surname : {Surname} , GroupNO : {GroupNo},Id : {Id}";
 
         }
     }

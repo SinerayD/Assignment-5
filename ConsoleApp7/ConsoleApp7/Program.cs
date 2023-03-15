@@ -6,9 +6,11 @@ StudentService StudentService = new StudentService();
 
 
 Console.WriteLine("Quit>>> Enter 0: ");
-Console.WriteLine("Creat>>> Enter 1: ");
-Console.WriteLine("Show>>> Enter 2: ");
-Console.WriteLine("Id>>> Enter 3: ");
+Console.WriteLine("\nCreat>>> Enter 1: ");
+Console.WriteLine("\nShow>>> Enter 2: ");
+Console.WriteLine("\nId>>> Enter 3: ");
+Console.WriteLine("\nDelete>>> Enter 4: ");
+Console.WriteLine("\nUpdate>>> Enter 5: ");
 
 Console.WriteLine("\n Make a choice :");
 int request = int.Parse(Console.ReadLine());
@@ -23,19 +25,25 @@ while (request != 0)
         case 2:
             StudentService.Show();
             break;
-        case 3:
-            StudentService.GetById();
+
+        case 4:
+            StudentService.Delete();
+            break;
+        case 5:
+            StudentService.Update();
             break;
 
         default:
-            Console.WriteLine("Enter only 1, 2 or 3");
+            Console.WriteLine("Enter only 1, 2, 3, 4 or 5");
             break;
     }
 
-    Console.WriteLine("Quit>>> Enter 0: ");
-    Console.WriteLine("Creat>>> Enter 1: ");
-    Console.WriteLine("Show>>> Enter 2: ");
-    Console.WriteLine("Id>>> Enter 3: ");
+    Console.WriteLine("\nQuit>>> Enter 0: ");
+    Console.WriteLine("\nCreat>>> Enter 1: ");
+    Console.WriteLine("\nShow>>> Enter 2: ");
+    Console.WriteLine("\nId>>> Enter 3: ");
+    Console.WriteLine("\nDelete>>> Enter 4: ");
+    Console.WriteLine("\nUpdate>>> Enter 5: ");
     request = int.Parse(Console.ReadLine());
 }
 

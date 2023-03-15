@@ -53,6 +53,82 @@ namespace ConsoleApp7.Services
                 Console.WriteLine(student);
             }
             
-        } 
+        }
+
+        public void Delete()
+        {
+            Console.WriteLine("Please add Id");
+
+            int.TryParse(Console.ReadLine(), out int id);
+
+            for(int i = 0; i < Students.Length; i++)
+            {
+                if (Students[i].Id == id)
+                {
+                    Student Student = Students[Students.Length - 1];
+
+                    Students[Students.Length - 1] = Students[i];
+
+                    Array.Resize(ref Students,Students.Length-1);
+
+                    Students[i] = Student;
+
+                    return;
+                }
+            }
+            Console.WriteLine($"Student Id No {id}. is not found"); 
+        }
+
+        public void Update()
+        {
+            Student student = new Student();
+            Console.WriteLine("Please add Id");
+
+            int.TryParse(Console.ReadLine(), out int id);
+
+            for (int i = 0; i < Students.Length; i++)
+            {
+                if (Students[i].Id == id)
+                {
+                    Console.WriteLine("Name");
+                    string name = Console.ReadLine();
+
+                    while(name.Length is > 2 and < 31)
+                    {
+                        Console.WriteLine("Name is not valid");
+
+                        student.Name=Console.ReadLine();
+                    }
+                    Students[i].Name = name;
+
+                    Console.WriteLine("Surname");
+
+                    string Surname = Console.ReadLine();
+
+
+                    while (Surname.Length is > 2 and < 31)
+                    {
+                        Console.WriteLine("Surname is not valid");
+
+                        Surname = Console.ReadLine();
+                    }
+                    Students[i].Surname = Surname;
+
+                    Console.WriteLine("Groupno");
+
+                    string GroupNo = Console.ReadLine();
+                    while(string.IsNullOrWhiteSpace(GroupNo))
+                    {
+                        Console.WriteLine("GroupNo is not valid");
+                        GroupNo = Console.ReadLine();
+                        Students[i].GroupNo = GroupNo;
+                    }
+
+               
+                    return;
+                }
+            }
+             Console.WriteLine($"Student Id No {id}. is not found");
+        }
     }
 }

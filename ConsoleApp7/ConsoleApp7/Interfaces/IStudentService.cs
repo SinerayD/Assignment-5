@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp7.Interfaces
 {
-    internal interface IStudentService
+    public interface IStudentService
     {
         public void Create();
 
         public void Show();
 
-           
+        public void Update();
+
+        public void Delete();
 
 
     }

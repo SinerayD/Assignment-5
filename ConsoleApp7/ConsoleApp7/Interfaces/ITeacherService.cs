@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp7.Interfaces
 {
-    internal interface ITeacherService
+    public interface ITeacherService
 
     {
         public void Create();
 
         public void Show();
+
+        public void Update();   
+
+        public void Delete();   
 
            
     }
